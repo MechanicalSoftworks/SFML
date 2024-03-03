@@ -159,9 +159,9 @@ macro(sfml_add_library target)
 
     # add the install rule
     install(TARGETS ${target} EXPORT SFMLConfigExport
-            RUNTIME DESTINATION bin COMPONENT bin
-            LIBRARY DESTINATION lib${LIB_SUFFIX} COMPONENT bin
-            ARCHIVE DESTINATION lib${LIB_SUFFIX} COMPONENT devel
+            RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR} COMPONENT bin
+            LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}${LIB_SUFFIX} COMPONENT bin
+            ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}${LIB_SUFFIX} COMPONENT devel
             FRAMEWORK DESTINATION "." COMPONENT bin)
 
     # add <project>/include as public include directory
